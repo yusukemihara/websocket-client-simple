@@ -26,7 +26,7 @@ module WebSocket
             if options[:cert]
               ctx.cert   = OpenSSL::X509::Certificate.new(File.read(options[:cert]))
               passphrase = options[:passphrase] || ""
-              ctx.key    = OpenSSL::X509::Pkey::RSA.new(File.read(options[:cert_key]),passphrase)
+              ctx.key    = OpenSSL::X509::PKey::RSA.new(File.read(options[:cert_key]),passphrase)
             end
 
             ctx.ca_file = options[:ca_file]
